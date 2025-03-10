@@ -20,7 +20,7 @@ The server exposes a tool, `fetch_youtube_transcript`, which retrieves transcrip
     "command": "uv",
     "args": [
       "--directory",
-      "/ABSOLUTE/PATH/TO/PARENT/FOLDER/mcp-transcripts",
+      "/ABSOLUTE/PATH/TO/PARENT/FOLDER/mcp-transcripts/src",
       "run",
       "server.py"
     ]
