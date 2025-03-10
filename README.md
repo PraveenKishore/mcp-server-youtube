@@ -28,17 +28,43 @@ The server exposes a tool, `fetch_youtube_transcript`, which retrieves transcrip
 }
 ```
 
-## Testing
+## Setup
+This project uses [uv](https://docs.astral.sh/uv/) for package/project management. 
+To run this project, follow the below setup instructions.
 
-### Testing only the MCP server
+1. Install uv if you haven't already. [Here's](https://docs.astral.sh/uv/getting-started/installation/) the installation instructions.
+2. Clone the repo.
+   ```sh
+   git clone https://github.com/PraveenKishore/mcp-server-youtube.git
+   cd mcp-server-youtube
+   ```
+3. Create virtual env and install dependencies.
+   ```sh
+   uv sync
+   ```
+4. Activate the virtual env.
+   ```sh
+   source .venv/bin/activate  # Activate the virtual environment (Linux/MacOS)
+   # OR
+   .\.venv\Scripts\activate  # Activate the virtual environment (Windows)
+   ```
+5. You're all set!
 
-Run this command - `mcp dev server.py` to launch an mcp inspector. You can view the tools list exposed in the tools tab and also invoke the tool with any input.
+## Testing the MCP Server
 
-### Testing with Claude Desktop
+### 1. **Testing Only the MCP Server**  
+To launch the MCP inspector, run the following command:
 
-Add the above mcp config in `claude_desktop_config.json`. More info [here](https://modelcontextprotocol.io/quickstart/user). You should be able to invoke the tool within Claude for desktop.
+```bash
+mcp dev server.py
+```
 
-### Testing with mcp-client-cli
+This will start the server, allowing you to view the list of exposed tools in the **Tools** tab. You can also invoke any of these tools with the appropriate input.
 
-[`mcp-client-cli`](https://github.com/adhikasp/mcp-client-cli) is a simple CLI program to run LLM prompt and implement Model Context Protocol (MCP) client.
-Paste the above config in the `~/.llm/config.json` to be able to use the tool within mcp-client-cli. More info in their [setup instructions](https://github.com/adhikasp/mcp-client-cli?tab=readme-ov-file#setup)
+### 2. **Testing with Claude Desktop**  
+To test with **Claude Desktop**, add the MCP configuration to the `claude_desktop_config.json` file.  
+For more details, refer to [this link](https://modelcontextprotocol.io/quickstart/user). Once configured, you should be able to invoke the tool directly within the **Claude Desktop** interface.
+
+### 3. **Testing with mcp-client-cli**  
+The [`mcp-client-cli`](https://github.com/adhikasp/mcp-client-cli) is a simple command-line tool for running LLM prompts and implementing the Model Context Protocol (MCP) client.  
+To use this tool, add the MCP configuration to `~/.llm/config.json`. For further setup instructions, check out the [official setup guide](https://github.com/adhikasp/mcp-client-cli?tab=readme-ov-file#setup). After configuration, you’ll be able to invoke the tool within `mcp-client-cli`.
