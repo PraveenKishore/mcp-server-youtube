@@ -56,7 +56,7 @@ To run this project, follow the below setup instructions.
 To launch the MCP inspector, run the following command:
 
 ```bash
-mcp dev server.py
+mcp dev src/server.py
 ```
 
 This will start the server, allowing you to view the list of exposed tools in the **Tools** tab. You can also invoke any of these tools with the appropriate input.
